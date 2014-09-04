@@ -41,7 +41,7 @@ class CashbillService extends PopbillBase {
     		$response = $this->executeCURL('/Cashbill/'.$MgtKey,$CorpNum);
     		return is_null($response->itemKey) == false;
     	}catch(PopbillException $pe) {
-    		if($pe->getCode() == -14000005) {return false;}
+    		if($pe->getCode() == -14000003) {return false;}
     		throw $pe;
     	}
     }
